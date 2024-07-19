@@ -6,6 +6,11 @@ import { CreateUserDto } from 'src/dtos/create.user.dto';
 export class UsersController {
     constructor(private readonly userService: UsersService) { }
 
+    @Post()
+    create(@Body() data: CreateUserDto) {
+        return this.userService.create(data)
+    }
+    
     @Get()
     findAll() {
         return this.userService.findAll();
@@ -19,11 +24,6 @@ export class UsersController {
     @Patch(':id')
     update(@Param('id') id: number, @Body() data: object) {
         return this.userService.update(id, data)
-    }
-
-    @Post()
-    create(@Body() data: CreateUserDto) {
-        return this.userService.create(data)
     }
 
     @Delete(':id')

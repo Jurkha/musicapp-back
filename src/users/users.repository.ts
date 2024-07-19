@@ -8,6 +8,12 @@ import { CreateUserDto } from "src/dtos/create.user.dto";
 export class UsersRepository {
     constructor(@InjectRepository(User)
     private userRepo: Repository<User>) { }
+
+    create(data: CreateUserDto) {
+        const user = this.userRepo.create(data);
+        return this.userRepo.save(user);
+    }
+
     findAll() {
         return this.userRepo.find();
     }
@@ -20,11 +26,6 @@ export class UsersRepository {
         return this.userRepo.update(id, data);
     }
     
-    create(data: CreateUserDto) {
-        const user = this.userRepo.create(data);
-        return this.userRepo.save(user);
-    }
-
     remove(id: number) {
         return this.userRepo.delete({id});
     }

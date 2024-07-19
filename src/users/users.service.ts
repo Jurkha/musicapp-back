@@ -5,6 +5,11 @@ import { UsersRepository } from './users.repository';
 @Injectable()
 export class UsersService {
     constructor(private readonly userRepository: UsersRepository) { }
+
+    create(data: CreateUserDto) {
+        return this.userRepository.create(data)
+    }
+    
     findAll() {
         return this.userRepository.findAll()
     }
@@ -15,10 +20,6 @@ export class UsersService {
 
     update(id: number, data: object) {
         return this.userRepository.update(id, data)
-    }
-
-    create(data: CreateUserDto) {
-        return this.userRepository.create(data)
     }
 
     remove(id: number) {
