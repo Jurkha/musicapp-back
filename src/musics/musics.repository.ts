@@ -10,8 +10,8 @@ export class MusicsRepository {
     private musicRepo: Repository<Music>) { }
 
     create(data: CreateMusicDto) {
-        const user = this.musicRepo.create(data);
-        return this.musicRepo.save(user);
+        const music = this.musicRepo.create(data);
+        return this.musicRepo.save(music);
     }
 
     findAll() {
