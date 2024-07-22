@@ -4,7 +4,7 @@ import { MusicsRepository } from './musics.repository';
 
 @Injectable()
 export class MusicsService {
-        constructor(private readonly musicRepository: MusicsRepository) { }
+    constructor(private readonly musicRepository: MusicsRepository) { }
 
     create(data: CreateMusicDto) {
         return this.musicRepository.create(data)
