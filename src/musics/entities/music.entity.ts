@@ -3,7 +3,7 @@ import { Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedCol
 @Entity()
 export class Music {
     @PrimaryGeneratedColumn()
-    id: number
+    id: number;
 
     @Column()
     name: string;
