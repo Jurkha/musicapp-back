@@ -4,7 +4,7 @@ import { MusicsService } from './musics.service';
 
 @Controller('musics')
 export class MusicsController {
-        constructor(private readonly musicService: MusicsService) { }
+    constructor(private readonly musicService: MusicsService) { }
 
     @Post()
     create(@Body() data: CreateMusicDto) {

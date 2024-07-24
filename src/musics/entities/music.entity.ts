@@ -1,6 +1,7 @@
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
-@Entity() export class Music {
+@Entity() 
+export class Music {
     @PrimaryGeneratedColumn()
     id: number
 
