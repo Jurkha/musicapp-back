@@ -4,9 +4,10 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ArtistsModule } from './artists/artists.module';
+import { MusicModule } from './musics/musics.module';
 
 @Module({
-  imports: [UsersModule,ArtistsModule,TypeOrmModule.forRoot({
+  imports: [UsersModule,ArtistsModule,MusicModule,TypeOrmModule.forRoot({
     type: 'mysql',
     host: 'localhost',
     port: 3306,
@@ -16,7 +17,7 @@ import { ArtistsModule } from './artists/artists.module';
     entities: [],
     autoLoadEntities: true,
     synchronize: true,
-  }), ArtistsModule,],
+  }), ArtistsModule, MusicModule, UsersModule],
   controllers: [AppController],
   providers: [AppService],
 })
